@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */; };
+		C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B41C91B4BF00EF25CA /* ViewController.swift */; };
+		C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2B61C91B4BF00EF25CA /* Main.storyboard */; };
+		C17AB2BA1C91B4BF00EF25CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2B91C91B4BF00EF25CA /* Assets.xcassets */; };
+		C17AB2BD1C91B4BF00EF25CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */; };
+		C17AB2C81C91B4BF00EF25CA /* VibroPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2C71C91B4BF00EF25CA /* VibroPhoneTests.swift */; };
+		C17AB2D31C91B4C000EF25CA /* VibroPhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2D21C91B4C000EF25CA /* VibroPhoneUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C17AB2C41C91B4BF00EF25CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C17AB2A71C91B4BE00EF25CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C17AB2AE1C91B4BE00EF25CA;
+			remoteInfo = VibroPhone;
+		};
+		C17AB2CF1C91B4C000EF25CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C17AB2A71C91B4BE00EF25CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C17AB2AE1C91B4BE00EF25CA;
+			remoteInfo = VibroPhone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibroPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C17AB2B41C91B4BF00EF25CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C17AB2B71C91B4BF00EF25CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C17AB2B91C91B4BF00EF25CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C17AB2BC1C91B4BF00EF25CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C17AB2BE1C91B4BF00EF25CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C17AB2C31C91B4BF00EF25CA /* VibroPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibroPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17AB2C71C91B4BF00EF25CA /* VibroPhoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibroPhoneTests.swift; sourceTree = "<group>"; };
+		C17AB2C91C91B4C000EF25CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C17AB2CE1C91B4C000EF25CA /* VibroPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibroPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17AB2D21C91B4C000EF25CA /* VibroPhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibroPhoneUITests.swift; sourceTree = "<group>"; };
+		C17AB2D41C91B4C000EF25CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C17AB2AC1C91B4BE00EF25CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17AB2C01C91B4BF00EF25CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17AB2CB1C91B4C000EF25CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C17AB2A61C91B4BE00EF25CA = {
+			isa = PBXGroup;
+			children = (
+				C17AB2B11C91B4BE00EF25CA /* VibroPhone */,
+				C17AB2C61C91B4BF00EF25CA /* VibroPhoneTests */,
+				C17AB2D11C91B4C000EF25CA /* VibroPhoneUITests */,
+				C17AB2B01C91B4BE00EF25CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C17AB2B01C91B4BE00EF25CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */,
+				C17AB2C31C91B4BF00EF25CA /* VibroPhoneTests.xctest */,
+				C17AB2CE1C91B4C000EF25CA /* VibroPhoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C17AB2B11C91B4BE00EF25CA /* VibroPhone */ = {
+			isa = PBXGroup;
+			children = (
+				C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */,
+				C17AB2B41C91B4BF00EF25CA /* ViewController.swift */,
+				C17AB2B61C91B4BF00EF25CA /* Main.storyboard */,
+				C17AB2B91C91B4BF00EF25CA /* Assets.xcassets */,
+				C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */,
+				C17AB2BE1C91B4BF00EF25CA /* Info.plist */,
+			);
+			path = VibroPhone;
+			sourceTree = "<group>";
+		};
+		C17AB2C61C91B4BF00EF25CA /* VibroPhoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				C17AB2C71C91B4BF00EF25CA /* VibroPhoneTests.swift */,
+				C17AB2C91C91B4C000EF25CA /* Info.plist */,
+			);
+			path = VibroPhoneTests;
+			sourceTree = "<group>";
+		};
+		C17AB2D11C91B4C000EF25CA /* VibroPhoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C17AB2D21C91B4C000EF25CA /* VibroPhoneUITests.swift */,
+				C17AB2D41C91B4C000EF25CA /* Info.plist */,
+			);
+			path = VibroPhoneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C17AB2AE1C91B4BE00EF25CA /* VibroPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C17AB2D71C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhone" */;
+			buildPhases = (
+				C17AB2AB1C91B4BE00EF25CA /* Sources */,
+				C17AB2AC1C91B4BE00EF25CA /* Frameworks */,
+				C17AB2AD1C91B4BE00EF25CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VibroPhone;
+			productName = VibroPhone;
+			productReference = C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C17AB2C21C91B4BF00EF25CA /* VibroPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C17AB2DA1C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhoneTests" */;
+			buildPhases = (
+				C17AB2BF1C91B4BF00EF25CA /* Sources */,
+				C17AB2C01C91B4BF00EF25CA /* Frameworks */,
+				C17AB2C11C91B4BF00EF25CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C17AB2C51C91B4BF00EF25CA /* PBXTargetDependency */,
+			);
+			name = VibroPhoneTests;
+			productName = VibroPhoneTests;
+			productReference = C17AB2C31C91B4BF00EF25CA /* VibroPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C17AB2CD1C91B4C000EF25CA /* VibroPhoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C17AB2DD1C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhoneUITests" */;
+			buildPhases = (
+				C17AB2CA1C91B4C000EF25CA /* Sources */,
+				C17AB2CB1C91B4C000EF25CA /* Frameworks */,
+				C17AB2CC1C91B4C000EF25CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C17AB2D01C91B4C000EF25CA /* PBXTargetDependency */,
+			);
+			name = VibroPhoneUITests;
+			productName = VibroPhoneUITests;
+			productReference = C17AB2CE1C91B4C000EF25CA /* VibroPhoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C17AB2A71C91B4BE00EF25CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Juho Pispa";
+				TargetAttributes = {
+					C17AB2AE1C91B4BE00EF25CA = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					C17AB2C21C91B4BF00EF25CA = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = C17AB2AE1C91B4BE00EF25CA;
+					};
+					C17AB2CD1C91B4C000EF25CA = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = C17AB2AE1C91B4BE00EF25CA;
+					};
+				};
+			};
+			buildConfigurationList = C17AB2AA1C91B4BE00EF25CA /* Build configuration list for PBXProject "VibroPhone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C17AB2A61C91B4BE00EF25CA;
+			productRefGroup = C17AB2B01C91B4BE00EF25CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C17AB2AE1C91B4BE00EF25CA /* VibroPhone */,
+				C17AB2C21C91B4BF00EF25CA /* VibroPhoneTests */,
+				C17AB2CD1C91B4C000EF25CA /* VibroPhoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C17AB2AD1C91B4BE00EF25CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C17AB2BD1C91B4BF00EF25CA /* LaunchScreen.storyboard in Resources */,
+				C17AB2BA1C91B4BF00EF25CA /* Assets.xcassets in Resources */,
+				C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17AB2C11C91B4BF00EF25CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17AB2CC1C91B4C000EF25CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C17AB2AB1C91B4BE00EF25CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */,
+				C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17AB2BF1C91B4BF00EF25CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C17AB2C81C91B4BF00EF25CA /* VibroPhoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C17AB2CA1C91B4C000EF25CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C17AB2D31C91B4C000EF25CA /* VibroPhoneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C17AB2C51C91B4BF00EF25CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C17AB2AE1C91B4BE00EF25CA /* VibroPhone */;
+			targetProxy = C17AB2C41C91B4BF00EF25CA /* PBXContainerItemProxy */;
+		};
+		C17AB2D01C91B4C000EF25CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C17AB2AE1C91B4BE00EF25CA /* VibroPhone */;
+			targetProxy = C17AB2CF1C91B4C000EF25CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C17AB2B61C91B4BF00EF25CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C17AB2B71C91B4BF00EF25CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C17AB2BC1C91B4BF00EF25CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C17AB2D51C91B4C000EF25CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C17AB2D61C91B4C000EF25CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C17AB2D81C91B4C000EF25CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VibroPhone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C17AB2D91C91B4C000EF25CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VibroPhone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C17AB2DB1C91B4C000EF25CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VibroPhoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VibroPhone.app/VibroPhone";
+			};
+			name = Debug;
+		};
+		C17AB2DC1C91B4C000EF25CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VibroPhoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VibroPhone.app/VibroPhone";
+			};
+			name = Release;
+		};
+		C17AB2DE1C91B4C000EF25CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VibroPhoneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = VibroPhone;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C17AB2DF1C91B4C000EF25CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VibroPhoneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = VibroPhone;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C17AB2AA1C91B4BE00EF25CA /* Build configuration list for PBXProject "VibroPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C17AB2D51C91B4C000EF25CA /* Debug */,
+				C17AB2D61C91B4C000EF25CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C17AB2D71C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C17AB2D81C91B4C000EF25CA /* Debug */,
+				C17AB2D91C91B4C000EF25CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C17AB2DA1C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C17AB2DB1C91B4C000EF25CA /* Debug */,
+				C17AB2DC1C91B4C000EF25CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C17AB2DD1C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C17AB2DE1C91B4C000EF25CA /* Debug */,
+				C17AB2DF1C91B4C000EF25CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C17AB2A71C91B4BE00EF25CA /* Project object */;
+}
