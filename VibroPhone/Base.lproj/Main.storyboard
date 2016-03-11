@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VibroPhone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,134 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKd-8Z-8OX">
+                                <rect key="frame" x="544" y="550" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="0.20909790454603525" green="0.58039215690000001" blue="0.20388492260851801" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQ3-Ff-0pG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD1-yc-Lqd">
+                                <rect key="frame" x="19" y="550" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.64313725489999995" green="0.25301346688972703" blue="0.23703895791298235" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1K-Nf-YB9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc3-FZ-rIT">
+                                <rect key="frame" x="56" y="158" width="489" height="284"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2u3-Mb-UYk">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="RWS-kJ-jpy"/>
+                                </constraints>
+                                <state key="normal" title="Send Messages">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txd-K9-fqu">
+                                <rect key="frame" x="300" y="0.0" width="300" height="58"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Received Messages">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9fe-V8-KXX" kind="show" animates="NO" id="ITf-Vd-RKR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="txd-K9-fqu" firstAttribute="width" secondItem="2u3-Mb-UYk" secondAttribute="width" id="11D-tI-iOj"/>
+                            <constraint firstItem="2u3-Mb-UYk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="8DE-ZY-Sxa"/>
+                            <constraint firstItem="txd-K9-fqu" firstAttribute="height" secondItem="2u3-Mb-UYk" secondAttribute="height" id="8we-hu-Y9o"/>
+                            <constraint firstItem="Rc3-FZ-rIT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="Fqu-Tm-QQf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OKd-8Z-8OX" secondAttribute="bottom" constant="20" id="JGt-cz-DOO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rc3-FZ-rIT" secondAttribute="trailing" constant="35" id="L9a-NL-QrU"/>
+                            <constraint firstItem="2u3-Mb-UYk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Mrq-5h-9Fm"/>
+                            <constraint firstItem="Rc3-FZ-rIT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="138" id="RMz-8Z-BKJ"/>
+                            <constraint firstItem="JD1-yc-Lqd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="Tmi-8n-bff"/>
+                            <constraint firstItem="txd-K9-fqu" firstAttribute="leading" secondItem="2u3-Mb-UYk" secondAttribute="trailing" id="Vfe-yW-w4Q"/>
+                            <constraint firstItem="txd-K9-fqu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="kFd-BM-VtZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OKd-8Z-8OX" secondAttribute="trailing" id="mnc-jp-elx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rc3-FZ-rIT" secondAttribute="bottom" constant="158" id="qah-oN-Cja"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="txd-K9-fqu" secondAttribute="trailing" constant="-20" id="t1n-1s-ZwR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JD1-yc-Lqd" secondAttribute="bottom" constant="20" id="ugp-Og-X8h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="JD1-yc-Lqd" id="gLd-nh-uqb"/>
+                        <outlet property="sendButton" destination="OKd-8Z-8OX" id="aHa-2Z-apx"/>
+                        <outlet property="touchPanel" destination="Rc3-FZ-rIT" id="wj5-XE-0Mt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="421" y="144"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="2am-Cy-k5w">
+            <objects>
+                <viewController id="9fe-V8-KXX" customClass="MessageViewController" customModule="VibroPhone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v23-pg-rYf"/>
+                        <viewControllerLayoutGuide type="bottom" id="cNk-Pd-er5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b67-g3-R05">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx2-JI-CqF">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="20S-A0-VY8"/>
+                                </constraints>
+                                <state key="normal" title="Send Messages">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="9Do-ay-L5f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41h-ug-dqz">
+                                <rect key="frame" x="300" y="0.0" width="300" height="58"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Received Messages">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-He-Qzk">
+                                <rect key="frame" x="0.0" y="57" width="600" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gx2-JI-CqF" firstAttribute="height" secondItem="41h-ug-dqz" secondAttribute="height" id="3QM-Xi-hGm"/>
+                            <constraint firstItem="41h-ug-dqz" firstAttribute="leading" secondItem="gx2-JI-CqF" secondAttribute="trailing" id="BAW-9E-5Ce"/>
+                            <constraint firstItem="41h-ug-dqz" firstAttribute="width" secondItem="gx2-JI-CqF" secondAttribute="width" id="C1u-uy-ZOu"/>
+                            <constraint firstItem="gx2-JI-CqF" firstAttribute="top" secondItem="b67-g3-R05" secondAttribute="topMargin" id="P34-iu-0Pd"/>
+                            <constraint firstItem="gx2-JI-CqF" firstAttribute="leading" secondItem="b67-g3-R05" secondAttribute="leadingMargin" constant="-20" id="iTv-dv-PZ2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="41h-ug-dqz" secondAttribute="trailing" constant="-20" id="kT5-Ar-SJN"/>
+                            <constraint firstItem="41h-ug-dqz" firstAttribute="top" secondItem="b67-g3-R05" secondAttribute="topMargin" id="n0K-71-zS4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageTableView" destination="UUB-He-Qzk" id="lGd-fY-KGJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="769-fz-fBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="144"/>
         </scene>
     </scenes>
 </document>

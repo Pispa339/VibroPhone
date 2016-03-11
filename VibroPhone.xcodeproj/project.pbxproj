@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1E087B744186735286C279 /* libPods-VibroPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F53D053F4895B933875F9D1F /* libPods-VibroPhone.a */; };
+		C105199F1C930E0E00C33511 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105199E1C930E0E00C33511 /* MessageViewController.swift */; };
 		C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */; };
 		C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B41C91B4BF00EF25CA /* ViewController.swift */; };
 		C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2B61C91B4BF00EF25CA /* Main.storyboard */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		81C737CB7520528A9A87D372 /* Pods-VibroPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibroPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-VibroPhone/Pods-VibroPhone.release.xcconfig"; sourceTree = "<group>"; };
+		9924B998522A0BA47206FFA1 /* Pods-VibroPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibroPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VibroPhone/Pods-VibroPhone.debug.xcconfig"; sourceTree = "<group>"; };
+		C105199E1C930E0E00C33511 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibroPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17AB2B41C91B4BF00EF25CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,8 @@
 		C17AB2CE1C91B4C000EF25CA /* VibroPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibroPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17AB2D21C91B4C000EF25CA /* VibroPhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibroPhoneUITests.swift; sourceTree = "<group>"; };
 		C17AB2D41C91B4C000EF25CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C17AB3031C91C24100EF25CA /* VibroPhone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VibroPhone-Bridging-Header.h"; sourceTree = "<group>"; };
+		F53D053F4895B933875F9D1F /* libPods-VibroPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VibroPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1E087B744186735286C279 /* libPods-VibroPhone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		421DADA1CC0A001419189E61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9924B998522A0BA47206FFA1 /* Pods-VibroPhone.debug.xcconfig */,
+				81C737CB7520528A9A87D372 /* Pods-VibroPhone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8DF028DE293A130D1FB61C26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F53D053F4895B933875F9D1F /* libPods-VibroPhone.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C17AB2A61C91B4BE00EF25CA = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				C17AB2C61C91B4BF00EF25CA /* VibroPhoneTests */,
 				C17AB2D11C91B4C000EF25CA /* VibroPhoneUITests */,
 				C17AB2B01C91B4BE00EF25CA /* Products */,
+				421DADA1CC0A001419189E61 /* Pods */,
+				8DF028DE293A130D1FB61C26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +130,8 @@
 				C17AB2B91C91B4BF00EF25CA /* Assets.xcassets */,
 				C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */,
 				C17AB2BE1C91B4BF00EF25CA /* Info.plist */,
+				C17AB3031C91C24100EF25CA /* VibroPhone-Bridging-Header.h */,
+				C105199E1C930E0E00C33511 /* MessageViewController.swift */,
 			);
 			path = VibroPhone;
 			sourceTree = "<group>";
@@ -132,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C17AB2D71C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhone" */;
 			buildPhases = (
+				F873D9EB015F58E6512969F3 /* Check Pods Manifest.lock */,
 				C17AB2AB1C91B4BE00EF25CA /* Sources */,
 				C17AB2AC1C91B4BE00EF25CA /* Frameworks */,
 				C17AB2AD1C91B4BE00EF25CA /* Resources */,
+				70364784765C932DA8C3AA58 /* Embed Pods Frameworks */,
+				C126EA1293ED5497A3261CD8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,12 +283,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70364784765C932DA8C3AA58 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VibroPhone/Pods-VibroPhone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C126EA1293ED5497A3261CD8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VibroPhone/Pods-VibroPhone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F873D9EB015F58E6512969F3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C17AB2AB1C91B4BE00EF25CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */,
+				C105199F1C930E0E00C33511 /* MessageViewController.swift in Sources */,
 				C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,23 +478,40 @@
 		};
 		C17AB2D81C91B4C000EF25CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9924B998522A0BA47206FFA1 /* Pods-VibroPhone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VibroPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VibroPhone/VibroPhone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C17AB2D91C91B4C000EF25CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81C737CB7520528A9A87D372 /* Pods-VibroPhone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VibroPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-39.VibroPhone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VibroPhone/VibroPhone-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -484,6 +582,7 @@
 				C17AB2D91C91B4C000EF25CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C17AB2DA1C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhoneTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +591,7 @@
 				C17AB2DC1C91B4C000EF25CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C17AB2DD1C91B4C000EF25CA /* Build configuration list for PBXNativeTarget "VibroPhoneUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +600,7 @@
 				C17AB2DF1C91B4C000EF25CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
