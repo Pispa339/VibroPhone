@@ -63,22 +63,10 @@ class ViewController: UIViewController {
         return ""
     }
     
-    func JSONToDict(jsonString:String) -> Dictionary<String, Float> {
-        do {
-            let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
-            let decoded = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: []) as? [String:Float]
-            // here "decoded" is the dictionary decoded from JSON data
-            return decoded!
-        } catch let error as NSError {
-            print(error)
-        }
-        return ["": 0]
-    }
-    
     func currDateToString() -> String {
             startTime = NSDate()
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "ss:mm:HH_dd-MM-yyyy"
+            dateFormatter.dateFormat = "SSS:ss:mm:HH_dd-MM-yyyy"
             return dateFormatter.stringFromDate(startTime)
     }
     
