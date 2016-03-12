@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC1E087B744186735286C279 /* libPods-VibroPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F53D053F4895B933875F9D1F /* libPods-VibroPhone.a */; };
 		C105199F1C930E0E00C33511 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105199E1C930E0E00C33511 /* MessageViewController.swift */; };
+		C10519A11C946ABD00C33511 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10519A01C946ABD00C33511 /* AudioToolbox.framework */; };
+		C10519A41C94725800C33511 /* VibrationPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C10519A31C94725800C33511 /* VibrationPlayer.m */; };
 		C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */; };
 		C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B41C91B4BF00EF25CA /* ViewController.swift */; };
 		C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2B61C91B4BF00EF25CA /* Main.storyboard */; };
@@ -39,6 +41,9 @@
 		81C737CB7520528A9A87D372 /* Pods-VibroPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibroPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-VibroPhone/Pods-VibroPhone.release.xcconfig"; sourceTree = "<group>"; };
 		9924B998522A0BA47206FFA1 /* Pods-VibroPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VibroPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VibroPhone/Pods-VibroPhone.debug.xcconfig"; sourceTree = "<group>"; };
 		C105199E1C930E0E00C33511 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		C10519A01C946ABD00C33511 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C10519A21C94725800C33511 /* VibrationPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationPlayer.h; sourceTree = "<group>"; };
+		C10519A31C94725800C33511 /* VibrationPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationPlayer.m; sourceTree = "<group>"; };
 		C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibroPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17AB2B41C91B4BF00EF25CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10519A11C946ABD00C33511 /* AudioToolbox.framework in Frameworks */,
 				BC1E087B744186735286C279 /* libPods-VibroPhone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +100,7 @@
 		8DF028DE293A130D1FB61C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C10519A01C946ABD00C33511 /* AudioToolbox.framework */,
 				F53D053F4895B933875F9D1F /* libPods-VibroPhone.a */,
 			);
 			name = Frameworks;
@@ -132,6 +139,8 @@
 				C17AB2BE1C91B4BF00EF25CA /* Info.plist */,
 				C17AB3031C91C24100EF25CA /* VibroPhone-Bridging-Header.h */,
 				C105199E1C930E0E00C33511 /* MessageViewController.swift */,
+				C10519A21C94725800C33511 /* VibrationPlayer.h */,
+				C10519A31C94725800C33511 /* VibrationPlayer.m */,
 			);
 			path = VibroPhone;
 			sourceTree = "<group>";
@@ -339,6 +348,7 @@
 				C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */,
 				C105199F1C930E0E00C33511 /* MessageViewController.swift in Sources */,
 				C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */,
+				C10519A41C94725800C33511 /* VibrationPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

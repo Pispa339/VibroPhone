@@ -15,6 +15,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
     var messageTitles = [String]()
     var messages = [String:[String:Float]]()
     var ref = Firebase(url: "https://vibrophone.firebaseio.com/Users/Juho/messages")
+    var vibrationPlayer:VibrationPlayer = VibrationPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +71,9 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         let messageDict = messages[key]
         let keys = Array(messageDict!.keys)
         var messageDateDict = [NSDate:Float]()
-        var times = [Double]()
-        times.append(0)
-        var durations = [Float]()
+        var times = [Int]()
+        //times.append(0)
+        var durations = [Int]()
         for key in keys {
             let date = dateFromString(key)
             messageDateDict[date] = messageDict![key]
@@ -81,17 +82,32 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         var dates = Array(messageDateDict.keys)
         dates.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedAscending })
         for date in dates {
-            durations.append(messageDateDict[date]!)
+            let duration = (messageDateDict[date]! * 1000)
+            durations.append(Int(duration))
         }
         
         for var i = 1; i < dates.count; i++ {
-            times.append((dates[i].timeIntervalSinceDate(dates[i-1])))
-        }
-        for time in times {
-            print(time)
-            //audioSer
+            let time = (dates[i].timeIntervalSinceDate(dates[i-1]) * 1000)
+            times.append(Int(time))
         }
         
+        vibrationPlayer.playVibration(times, durations)
+        
+//        var vibrationPattern = [NSNumber]()
+//        var vibrationDict:NSMutableDictionary
+//        for var i = 0; i < times.count; i++ {
+//            vibrationPattern.append(NSNumber(integer: 1))
+//            vibrationPattern.append(NSNumber(integer: times[i]))
+//            if(i < (times.count-1)) {
+//                vibrationPattern.append(NSNumber(integer: 0))
+//                vibrationPattern.append(NSNumber(integer: durations[i+1]))
+//            }
+//            
+//        }
+//        vibrationDict.setObject(vibrationPattern, forKey: "VibePattern")
+//        vibrationDict.setObject(NSNumber(integer: 1), forKey: "Intensity")
+//        
+//        //AudioServicesPlaySystemSoundWithVibration(4095,nil,vibrationDict)
         
     }
     
