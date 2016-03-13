@@ -11,6 +11,8 @@
 		C105199F1C930E0E00C33511 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C105199E1C930E0E00C33511 /* MessageViewController.swift */; };
 		C10519A11C946ABD00C33511 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10519A01C946ABD00C33511 /* AudioToolbox.framework */; };
 		C10519A41C94725800C33511 /* VibrationPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C10519A31C94725800C33511 /* VibrationPlayer.m */; };
+		C10519A61C95738F00C33511 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10519A51C95738E00C33511 /* Constants.swift */; };
+		C10519A81C95809500C33511 /* MorseCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10519A71C95809500C33511 /* MorseCoder.swift */; };
 		C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */; };
 		C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B41C91B4BF00EF25CA /* ViewController.swift */; };
 		C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2B61C91B4BF00EF25CA /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		C10519A01C946ABD00C33511 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C10519A21C94725800C33511 /* VibrationPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationPlayer.h; sourceTree = "<group>"; };
 		C10519A31C94725800C33511 /* VibrationPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationPlayer.m; sourceTree = "<group>"; };
+		C10519A51C95738E00C33511 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C10519A71C95809500C33511 /* MorseCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorseCoder.swift; sourceTree = "<group>"; };
 		C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibroPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17AB2B41C91B4BF00EF25CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			children = (
 				C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */,
 				C17AB2B41C91B4BF00EF25CA /* ViewController.swift */,
+				C10519A51C95738E00C33511 /* Constants.swift */,
 				C17AB2B61C91B4BF00EF25CA /* Main.storyboard */,
 				C17AB2B91C91B4BF00EF25CA /* Assets.xcassets */,
 				C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */,
@@ -141,6 +146,7 @@
 				C105199E1C930E0E00C33511 /* MessageViewController.swift */,
 				C10519A21C94725800C33511 /* VibrationPlayer.h */,
 				C10519A31C94725800C33511 /* VibrationPlayer.m */,
+				C10519A71C95809500C33511 /* MorseCoder.swift */,
 			);
 			path = VibroPhone;
 			sourceTree = "<group>";
@@ -345,8 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10519A61C95738F00C33511 /* Constants.swift in Sources */,
 				C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */,
 				C105199F1C930E0E00C33511 /* MessageViewController.swift in Sources */,
+				C10519A81C95809500C33511 /* MorseCoder.swift in Sources */,
 				C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */,
 				C10519A41C94725800C33511 /* VibrationPlayer.m in Sources */,
 			);

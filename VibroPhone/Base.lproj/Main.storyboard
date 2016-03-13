@@ -62,19 +62,27 @@
                                     <segue destination="9fe-V8-KXX" kind="show" animates="NO" id="ITf-Vd-RKR"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter message in plaintext" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LGx-1A-m8s">
+                                <rect key="frame" x="56" y="97" width="489" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="txd-K9-fqu" firstAttribute="width" secondItem="2u3-Mb-UYk" secondAttribute="width" id="11D-tI-iOj"/>
+                            <constraint firstItem="Rc3-FZ-rIT" firstAttribute="top" secondItem="LGx-1A-m8s" secondAttribute="bottom" constant="31" id="1vZ-yi-QzW"/>
                             <constraint firstItem="2u3-Mb-UYk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="8DE-ZY-Sxa"/>
                             <constraint firstItem="txd-K9-fqu" firstAttribute="height" secondItem="2u3-Mb-UYk" secondAttribute="height" id="8we-hu-Y9o"/>
                             <constraint firstItem="Rc3-FZ-rIT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="Fqu-Tm-QQf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OKd-8Z-8OX" secondAttribute="bottom" constant="20" id="JGt-cz-DOO"/>
+                            <constraint firstItem="LGx-1A-m8s" firstAttribute="width" secondItem="Rc3-FZ-rIT" secondAttribute="width" id="JeP-Hs-5k7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rc3-FZ-rIT" secondAttribute="trailing" constant="35" id="L9a-NL-QrU"/>
                             <constraint firstItem="2u3-Mb-UYk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Mrq-5h-9Fm"/>
                             <constraint firstItem="Rc3-FZ-rIT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="138" id="RMz-8Z-BKJ"/>
                             <constraint firstItem="JD1-yc-Lqd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="Tmi-8n-bff"/>
                             <constraint firstItem="txd-K9-fqu" firstAttribute="leading" secondItem="2u3-Mb-UYk" secondAttribute="trailing" id="Vfe-yW-w4Q"/>
+                            <constraint firstItem="LGx-1A-m8s" firstAttribute="centerX" secondItem="Rc3-FZ-rIT" secondAttribute="centerX" id="atj-VK-vJS"/>
                             <constraint firstItem="txd-K9-fqu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="kFd-BM-VtZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OKd-8Z-8OX" secondAttribute="trailing" id="mnc-jp-elx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rc3-FZ-rIT" secondAttribute="bottom" constant="158" id="qah-oN-Cja"/>
@@ -85,6 +93,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="JD1-yc-Lqd" id="gLd-nh-uqb"/>
                         <outlet property="sendButton" destination="OKd-8Z-8OX" id="aHa-2Z-apx"/>
+                        <outlet property="textField" destination="LGx-1A-m8s" id="SKp-N7-Xqw"/>
                         <outlet property="touchPanel" destination="Rc3-FZ-rIT" id="wj5-XE-0Mt"/>
                     </connections>
                 </viewController>

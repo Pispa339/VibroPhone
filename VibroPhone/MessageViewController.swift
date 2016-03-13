@@ -96,7 +96,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func dateFromString(dateString: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "SSS:ss:mm:HH_dd-MM-yyyy"
+        dateFormatter.dateFormat = Constants.dateFormat
         let date = dateFormatter.dateFromString(dateString)
         return date!
     }

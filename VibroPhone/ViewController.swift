@@ -11,6 +11,8 @@ import CoreMotion
 
 class ViewController: UIViewController {
     let motionManager = CMMotionManager()
+    //let morseAlphabets = MorseAlphabets()
+    var lPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
     var timestamps = [String: Float]()
     var startTime:NSDate = NSDate()
     var startTimeString:String = ""
@@ -24,11 +26,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         UIApplication.sharedApplication().idleTimerDisabled = true
         
-        let lPressGesture = UILongPressGestureRecognizer(target: self, action: "handleTouch:")
+        lPressGesture = UILongPressGestureRecognizer(target: self, action: "handleTouch:")
         lPressGesture.minimumPressDuration = 0
         touchPanel.addGestureRecognizer(lPressGesture)
         
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tapGesture)
+        
+        textField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
     }
+    @IBOutlet weak var textField: UITextField!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,7 +61,24 @@ class ViewController: UIViewController {
         }
     }
     
-    func dictToJSON(dict:Dictionary<String, Float>) -> String {
+    func textFieldDidChange(textField: UITextField) {
+        if(textField.text == "") {
+            lPressGesture.enabled = true
+            sendButton.enabled = false
+            cancelButton.enabled = false
+        }
+        else {
+            lPressGesture.enabled = false
+            sendButton.enabled = true
+            cancelButton.enabled = true
+        }
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func dictToJSON(dict:[String:Float]) -> String {
         do {
             let jsonData = try NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted)
             // here "jsonData" is the dictionary encoded in JSON data
@@ -68,16 +93,29 @@ class ViewController: UIViewController {
     func currDateToString() -> String {
             startTime = NSDate()
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "SSS:ss:mm:HH_dd-MM-yyyy"
+            dateFormatter.dateFormat = Constants.dateFormat
             return dateFormatter.stringFromDate(startTime)
     }
     
     @IBAction func sendButtonPressed(sender: AnyObject) {
-        let jsonStringToSend = dictToJSON(timestamps)
-        print(jsonStringToSend)
+        if(textField.text == "") {
+            sendMorseCode(timestamps)
+        }
+        else {
+            let morseDict = stringToMorse(textField.text!.uppercaseString)
+            sendMorseCode(morseDict)
+            textField.text = ""
+        }
+        sendButton.enabled = false
+        cancelButton.enabled = false
+    }
+    
+    func sendMorseCode(dictToSend: [String:Float]) {
+        let jsonString = dictToJSON(dictToSend)
+        print(jsonString)
         let id = currDateToString()
         let msgPath = ref.childByAppendingPath(id)
-        msgPath.setValue(timestamps)
+        msgPath.setValue(dictToSend)
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
@@ -86,6 +124,7 @@ class ViewController: UIViewController {
         startTimeString = ""
         sendButton.enabled = false
         cancelButton.enabled = false
+        textField.text = ""
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
