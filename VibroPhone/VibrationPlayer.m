@@ -16,22 +16,16 @@ void AudioServicesPlaySystemSoundWithVibration(int, id, id);
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < times.count; i++){
+    for (int i = 0; i < durations.count; i++){
         [arr addObject:[NSNumber numberWithBool:YES]];
-        [arr addObject:[times objectAtIndex:i]];
-        //vibrationPattern.(NSNumber(integer: 1))
-        //vibrationPattern.append(NSNumber(integer: times[i]))
-        if(i < (times.count-1)) {
+        [arr addObject:[durations objectAtIndex:i]];
+        if(i < (times.count)) {
             [arr addObject:[NSNumber numberWithBool:NO]];
-            [arr addObject:[durations objectAtIndex:i+1]];
-            //vibrationPattern.append(NSNumber(integer: durations[i+1]))
+            [arr addObject:[times objectAtIndex:i]];
         }
-        
     }
     [dict setObject:arr forKey:@"VibePattern"];
     [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
-//    vibrationDict.setObject(vibrationPattern, forKey: "VibePattern")
-//    vibrationDict.setObject(NSNumber(integer: 1), forKey: "Intensity")
     
     AudioServicesPlaySystemSoundWithVibration(4095,nil,dict);
     

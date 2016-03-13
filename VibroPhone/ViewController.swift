@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     
     func handleTouch(recognizer: UILongPressGestureRecognizer!) {
         if(recognizer.state == UIGestureRecognizerState.Began) {
+            touchPanel.backgroundColor = UIColor.darkGrayColor()
             startTimeString = currDateToString()
         }
         if(recognizer.state == UIGestureRecognizerState.Ended) {
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
             sendButton.enabled = true
             cancelButton.enabled = true
             print("touch saved")
+            touchPanel.backgroundColor = UIColor.lightGrayColor()
         }
     }
     
@@ -76,14 +78,23 @@ class ViewController: UIViewController {
         let id = currDateToString()
         let msgPath = ref.childByAppendingPath(id)
         msgPath.setValue(timestamps)
-        
     }
+    
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         timestamps.removeAll()
         startTime = NSDate()
         startTimeString = ""
         sendButton.enabled = false
         cancelButton.enabled = false
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }
 

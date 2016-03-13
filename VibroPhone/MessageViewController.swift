@@ -30,9 +30,6 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
             }, withCancelBlock: { error in
                 print(error.description)
         })
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,12 +69,10 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         let keys = Array(messageDict!.keys)
         var messageDateDict = [NSDate:Float]()
         var times = [Int]()
-        //times.append(0)
         var durations = [Int]()
         for key in keys {
             let date = dateFromString(key)
             messageDateDict[date] = messageDict![key]
-            //durations.append(messageDict![key]!)
         }
         var dates = Array(messageDateDict.keys)
         dates.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedAscending })
@@ -91,24 +86,12 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
             times.append(Int(time))
         }
         
+        for var i = 1; i < times.count; i++ {
+            times[i] = times[i] - durations[i-1]
+        }
+        
+        
         vibrationPlayer.playVibration(times, durations)
-        
-//        var vibrationPattern = [NSNumber]()
-//        var vibrationDict:NSMutableDictionary
-//        for var i = 0; i < times.count; i++ {
-//            vibrationPattern.append(NSNumber(integer: 1))
-//            vibrationPattern.append(NSNumber(integer: times[i]))
-//            if(i < (times.count-1)) {
-//                vibrationPattern.append(NSNumber(integer: 0))
-//                vibrationPattern.append(NSNumber(integer: durations[i+1]))
-//            }
-//            
-//        }
-//        vibrationDict.setObject(vibrationPattern, forKey: "VibePattern")
-//        vibrationDict.setObject(NSNumber(integer: 1), forKey: "Intensity")
-//        
-//        //AudioServicesPlaySystemSoundWithVibration(4095,nil,vibrationDict)
-        
     }
     
     func dateFromString(dateString: String) -> NSDate {
