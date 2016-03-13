@@ -11,7 +11,6 @@ import CoreMotion
 
 class ViewController: UIViewController {
     let motionManager = CMMotionManager()
-    //let morseAlphabets = MorseAlphabets()
     var lPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
     var timestamps = [String: Float]()
     var startTime:NSDate = NSDate()
@@ -59,6 +58,7 @@ class ViewController: UIViewController {
             print("touch saved")
             touchPanel.backgroundColor = UIColor.lightGrayColor()
         }
+        textField.enabled = false
     }
     
     func textFieldDidChange(textField: UITextField) {
@@ -108,6 +108,7 @@ class ViewController: UIViewController {
         }
         sendButton.enabled = false
         cancelButton.enabled = false
+        textField.enabled = true
     }
     
     func sendMorseCode(dictToSend: [String:Float]) {
@@ -125,6 +126,7 @@ class ViewController: UIViewController {
         sendButton.enabled = false
         cancelButton.enabled = false
         textField.text = ""
+        textField.enabled = true
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {

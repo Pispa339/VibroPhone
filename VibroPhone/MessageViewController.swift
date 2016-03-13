@@ -26,6 +26,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
             print(snapshot.value)
             self.messages = snapshot.value as! [String:[String:Float]]
             self.messageTitles = Array(self.messages.keys)
+            self.messageTitles.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedDescending })
             self.messageTableView.reloadData()
             }, withCancelBlock: { error in
                 print(error.description)
