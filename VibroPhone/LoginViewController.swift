@@ -55,6 +55,7 @@ class LoginViewController: UIViewController {
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject(userName, forKey: Constants.userNameKey)
                         defaults.setObject(password, forKey: Constants.passwordKey)
+                        defaults.setObject(authData.uid, forKey: Constants.uidKey)
                         self.dismissViewControllerAnimated(true, completion: nil)
                         print(authData)
                     } else {

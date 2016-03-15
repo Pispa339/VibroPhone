@@ -15,11 +15,12 @@ class ViewController: UIViewController {
     var timestamps = [String: Float]()
     var startTime:NSDate = NSDate()
     var startTimeString:String = ""
-    var ref = Firebase(url: "https://vibrophone.firebaseio.com/Users/Juho/messages")
+    var ref = Firebase(url: "https://vibrophone.firebaseio.com/Users/")
     
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var touchPanel: UIView!
+    @IBOutlet weak var receiverTField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,20 +108,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(sender: AnyObject) {
-        if(messageTextField.text == "") {
-            sendMorseCode(timestamps)
-        }
-        else {
-            let morseDict = stringToMorse(messageTextField.text!.uppercaseString)
-            sendMorseCode(morseDict)
-            messageTextField.text = ""
-        }
-        sendButton.enabled = false
-        cancelButton.enabled = false
-        messageTextField.enabled = true
-        lPressGesture.enabled = true
-        if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
+        if(receiverTField.text != "") {
+            if(messageTextField.text == "") {
+                sendMorseCode(timestamps)
+            }
+            else {
+                let morseDict = stringToMorse(messageTextField.text!.uppercaseString)
+                sendMorseCode(morseDict)
+                messageTextField.text = ""
+            }
+            sendButton.enabled = false
+            cancelButton.enabled = false
+            messageTextField.enabled = true
+            lPressGesture.enabled = true
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+            }
         }
     }
     
@@ -128,7 +131,7 @@ class ViewController: UIViewController {
         let jsonString = dictToJSON(dictToSend)
         print(jsonString)
         let id = currDateToString()
-        let msgPath = ref.childByAppendingPath(id)
+        let msgPath = ref.childByAppendingPath(receiverTField.text).childByAppendingPath(id)
         msgPath.setValue(dictToSend)
     }
     
