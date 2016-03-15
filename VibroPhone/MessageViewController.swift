@@ -11,17 +11,34 @@ import CoreMotion
 
 class MessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var composeButton: UIButton!
     @IBOutlet weak var messageTableView: UITableView!
     var messageTitles = [String]()
     var messages = [String:[String:Float]]()
     var ref = Firebase(url: "https://vibrophone.firebaseio.com/Users/Juho/messages")
     var vibrationPlayer:VibrationPlayer = VibrationPlayer()
+    var loggedIn:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey(Constants.userNameKey)
+        defaults.removeObjectForKey(Constants.passwordKey)
         messageTableView.delegate = self
         messageTableView.dataSource = self
+//        authenticateUser()
+//        if(loggedIn) {
+//            getMessages()
+//        }
         
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        authenticateUser()
+    }
+    
+    func getMessages() {
         ref.queryOrderedByKey().observeEventType(.Value, withBlock: { snapshot in
             print(snapshot.value)
             self.messages = snapshot.value as! [String:[String:Float]]
@@ -31,6 +48,48 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
             }, withCancelBlock: { error in
                 print(error.description)
         })
+    }
+    
+    func authenticateUser() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let userName = defaults.stringForKey(Constants.userNameKey)
+        {
+            if let password = defaults.stringForKey(Constants.passwordKey) {
+                loggedIn = true
+                composeButton.enabled = true
+                loginAndRetrieveData(userName, password: password)
+            }
+        }
+        else {
+            loggedIn = false
+            composeButton.enabled = false
+            defaults.removeObjectForKey(Constants.userNameKey)
+            defaults.removeObjectForKey(Constants.passwordKey)
+            self.performSegueWithIdentifier("showLogin", sender: self)
+            return
+        }
+    }
+    
+    func loginAndRetrieveData(userName: String, password :String) {
+        ref.authUser(userName, password: password) {
+            error, authData in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: "Could not login", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                self.ref.observeAuthEventWithBlock({ authData in
+                    if authData != nil {
+                        // user authenticated
+                        print(authData)
+                    } else {
+                        let alert = UIAlertController(title: "Error", message: "No user signed in", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                })
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -24,18 +24,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().idleTimerDisabled = true
+        initGestureRecognizers()
         
+        messageTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+    }
+    
+    func initGestureRecognizers() {
         lPressGesture = UILongPressGestureRecognizer(target: self, action: "handleTouch:")
         lPressGesture.minimumPressDuration = 0
         touchPanel.addGestureRecognizer(lPressGesture)
         
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tapGesture)
-        
-        textField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
     }
-    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var messageTextField: UITextField!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
             print("touch saved")
             touchPanel.backgroundColor = UIColor.lightGrayColor()
         }
-        textField.enabled = false
+        messageTextField.enabled = false
     }
     
     func textFieldDidChange(textField: UITextField) {
@@ -76,6 +80,11 @@ class ViewController: UIViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func dictToJSON(dict:[String:Float]) -> String {
@@ -98,17 +107,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(sender: AnyObject) {
-        if(textField.text == "") {
+        if(messageTextField.text == "") {
             sendMorseCode(timestamps)
         }
         else {
-            let morseDict = stringToMorse(textField.text!.uppercaseString)
+            let morseDict = stringToMorse(messageTextField.text!.uppercaseString)
             sendMorseCode(morseDict)
-            textField.text = ""
+            messageTextField.text = ""
         }
         sendButton.enabled = false
         cancelButton.enabled = false
-        textField.enabled = true
+        messageTextField.enabled = true
+        lPressGesture.enabled = true
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
     }
     
     func sendMorseCode(dictToSend: [String:Float]) {
@@ -125,8 +138,9 @@ class ViewController: UIViewController {
         startTimeString = ""
         sendButton.enabled = false
         cancelButton.enabled = false
-        textField.text = ""
-        textField.enabled = true
+        messageTextField.text = ""
+        messageTextField.enabled = true
+        lPressGesture.enabled = true
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {

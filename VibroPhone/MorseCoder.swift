@@ -43,7 +43,7 @@ func letterToMorse(char: Character){
         date = date.dateByAddingTimeInterval(pause)
         charAsMorse = addShort(charAsMorse)
         break
-    case "B":
+    case "C":
         charAsMorse = addLong(charAsMorse)
         date = date.dateByAddingTimeInterval(pause)
         charAsMorse = addShort(charAsMorse)

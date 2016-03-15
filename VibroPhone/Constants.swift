@@ -10,4 +10,6 @@ import Foundation
 
 struct Constants {
     static let dateFormat = "dd-MM-yyyy_HH:mm:ss:SSS"
+    static let userNameKey = "userNameKey"
+    static let passwordKey = "passwordKey"
 }
