@@ -131,7 +131,10 @@ class ViewController: UIViewController {
         let jsonString = dictToJSON(dictToSend)
         print(jsonString)
         let id = currDateToString()
-        let msgPath = ref.childByAppendingPath(receiverTField.text).childByAppendingPath(id)
+        let receiver = receiverTField.text?.stringByReplacingOccurrencesOfString(".", withString: "")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let sender = defaults.stringForKey(Constants.userNameKey)?.stringByReplacingOccurrencesOfString(".", withString: "")
+        let msgPath = ref.childByAppendingPath(receiver).childByAppendingPath(sender).childByAppendingPath(id)
         msgPath.setValue(dictToSend)
     }
     

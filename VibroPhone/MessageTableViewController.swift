@@ -13,6 +13,7 @@ class MessageTableViewController: UITableViewController {
     @IBOutlet weak var composeButton: UIButton!
     var received = [String]()
     var ref = Firebase(url: "https://vibrophone.firebaseio.com/")
+    var refForUser = Firebase(url: "https://vibrophone.firebaseio.com/Users")
     var loggedIn:Bool = false
     var uid:String = ""
     var username:String = ""
@@ -26,20 +27,25 @@ class MessageTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        authenticateUser()
-        if(loggedIn) {
+        if(!loggedIn) {
+            authenticateUser()
+        }
+        else {
             getReceived()
         }
     }
     
     func getReceived() {
-        let refForUser = ref.childByAppendingPath(username)
         refForUser.queryOrderedByKey().observeEventType(.Value, withBlock: { snapshot in
             print(snapshot.value)
             let userData = snapshot.value
-            self.received = userData as! [String]
-            self.received.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedDescending })
-            self.tableView.reloadData()
+            if let _ = userData as? [String:[String:[String:Float]]] {
+                let allData = userData as! [String:[String:[String:Float]]]
+                self.received = Array(allData.keys)
+                
+                self.received.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedDescending })
+                self.tableView.reloadData()
+            }
             }, withCancelBlock: { error in
                 print(error.description)
         })
@@ -52,9 +58,9 @@ class MessageTableViewController: UITableViewController {
             uid = usersUID
             loggedIn = true
             composeButton.enabled = true
-            let userName = defaults.stringForKey(Constants.userNameKey)
+            username = defaults.stringForKey(Constants.userNameKey)!
             let password = defaults.stringForKey(Constants.passwordKey)
-            loginAndRetrieveData(userName!, password: password!)
+            loginAndRetrieveData(username, password: password!)
         }
         else {
             loggedIn = false
@@ -78,6 +84,9 @@ class MessageTableViewController: UITableViewController {
                     if authData != nil {
                         // user authenticated
                         print(authData)
+                        let usernamePathComponent = self.username.stringByReplacingOccurrencesOfString(".", withString: "")
+                        self.refForUser = self.refForUser.childByAppendingPath(usernamePathComponent)
+                        self.getReceived()
                     } else {
                         let alert = UIAlertController(title: "Error", message: "No user signed in", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -103,7 +112,7 @@ class MessageTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("usersCell", forIndexPath: indexPath)
         
         let row = indexPath.row
         cell.textLabel?.text = received[row]
@@ -115,8 +124,19 @@ class MessageTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let row = indexPath.row
-        //print(received[row])
+        //let row = indexPath.row
+        //showMessages
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMessages" {
+            if let destination = segue.destinationViewController as? MsgsFromUserViewController {
+                if let userIndex = tableView.indexPathForSelectedRow?.row {
+                    destination.senderUsername = received[userIndex]
+                    destination.ref = refForUser
+                }
+            }
+        }
     }
     
 }

@@ -23,6 +23,15 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let _ = defaults.stringForKey(Constants.uidKey) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

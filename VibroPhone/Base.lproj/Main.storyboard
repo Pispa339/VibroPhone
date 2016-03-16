@@ -105,9 +105,9 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="JD1-yc-Lqd" id="gLd-nh-uqb"/>
+                        <outlet property="messageTextField" destination="LGx-1A-m8s" id="W6K-Ac-l1S"/>
                         <outlet property="receiverTField" destination="2II-qi-qTU" id="TrM-wi-Mpr"/>
                         <outlet property="sendButton" destination="OKd-8Z-8OX" id="aHa-2Z-apx"/>
-                        <outlet property="textField" destination="LGx-1A-m8s" id="SKp-N7-Xqw"/>
                         <outlet property="touchPanel" destination="Rc3-FZ-rIT" id="wj5-XE-0Mt"/>
                     </connections>
                 </viewController>
@@ -132,7 +132,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ZAS-4n-euh" kind="show" id="zmj-ft-aiR"/>
+                                    <segue destination="ZAS-4n-euh" kind="show" identifier="showMessages" id="zmj-ft-aiR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -212,7 +212,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxV-qu-qBL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxV-qu-qBL">
                                 <rect key="frame" x="168" y="120" width="264" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="264" id="gtP-yA-pAz"/>
@@ -221,7 +221,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUS-YV-75w">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUS-YV-75w">
                                 <rect key="frame" x="168" y="193" width="264" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zfW-3e-HNq"/>
@@ -297,7 +297,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="537-aW-fiL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="537-aW-fiL">
                                 <rect key="frame" x="168" y="165" width="264" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="264" id="wAZ-LH-yDf"/>
@@ -305,7 +305,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3MW-CC-nU3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3MW-CC-nU3">
                                 <rect key="frame" x="168" y="238" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -319,7 +319,7 @@
                                     <action selector="signupButtonPressed:" destination="efG-gb-jbt" eventType="touchUpInside" id="3AR-cG-BSg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0TK-vv-bq5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0TK-vv-bq5">
                                 <rect key="frame" x="168" y="308" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>

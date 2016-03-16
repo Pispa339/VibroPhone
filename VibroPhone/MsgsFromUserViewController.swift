@@ -12,8 +12,9 @@ class MsgsFromUserViewController: UITableViewController {
 
     var messageTitles = [String]()
     var messages = [String:[String:Float]]()
-    var ref = Firebase(url: "https://vibrophone.firebaseio.com/Users/Juho/messages")
+    var ref:Firebase!
     var vibrationPlayer:VibrationPlayer = VibrationPlayer()
+    var senderUsername:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,11 @@ class MsgsFromUserViewController: UITableViewController {
     }
     
     func getMessages() {
-        ref.queryOrderedByKey().observeEventType(.Value, withBlock: { snapshot in
+        print(ref)
+        print(senderUsername)
+        ref = ref.childByAppendingPath(senderUsername)
+        print(ref)
+        ref!.queryOrderedByKey().observeEventType(.Value, withBlock: { snapshot in
             print(snapshot.value)
             self.messages = snapshot.value as! [String:[String:Float]]
             self.messageTitles = Array(self.messages.keys)
