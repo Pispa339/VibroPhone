@@ -16,6 +16,7 @@
 		C10519AC1C98438B00C33511 /* MsgsFromUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10519AB1C98438A00C33511 /* MsgsFromUserViewController.swift */; };
 		C10519AE1C98461500C33511 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10519AD1C98461500C33511 /* MessageTableViewController.swift */; };
 		C10519B01C98622400C33511 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10519AF1C98622400C33511 /* SignUpViewController.swift */; };
+		C1257B881C9C2A8B00225049 /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1257B871C9C2A8B00225049 /* ReceiverViewController.swift */; };
 		C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */; };
 		C17AB2B51C91B4BF00EF25CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2B41C91B4BF00EF25CA /* ViewController.swift */; };
 		C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2B61C91B4BF00EF25CA /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		C10519AB1C98438A00C33511 /* MsgsFromUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgsFromUserViewController.swift; sourceTree = "<group>"; };
 		C10519AD1C98461500C33511 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		C10519AF1C98622400C33511 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C1257B871C9C2A8B00225049 /* ReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
 		C17AB2AF1C91B4BE00EF25CA /* VibroPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibroPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17AB2B21C91B4BF00EF25CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17AB2B41C91B4BF00EF25CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				C17AB2B41C91B4BF00EF25CA /* ViewController.swift */,
 				C10519A51C95738E00C33511 /* Constants.swift */,
 				C17AB2B61C91B4BF00EF25CA /* Main.storyboard */,
+				C1257B871C9C2A8B00225049 /* ReceiverViewController.swift */,
 				C10519AF1C98622400C33511 /* SignUpViewController.swift */,
 				C10519AD1C98461500C33511 /* MessageTableViewController.swift */,
 				C10519A91C9836DF00C33511 /* LoginViewController.swift */,
@@ -369,6 +372,7 @@
 				C10519B01C98622400C33511 /* SignUpViewController.swift in Sources */,
 				C10519AE1C98461500C33511 /* MessageTableViewController.swift in Sources */,
 				C10519A41C94725800C33511 /* VibrationPlayer.m in Sources */,
+				C1257B881C9C2A8B00225049 /* ReceiverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

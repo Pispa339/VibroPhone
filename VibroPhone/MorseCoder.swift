@@ -8,8 +8,8 @@
 
 import Foundation
 
-var pause:Double = 0.6
-var charGap:Double = 1.0
+var pause:Double = 0.3
+var charGap:Double = 0.6
 var date = NSDate()
 var charAsMorse = [String:Float]()
 
@@ -29,343 +29,343 @@ func letterToMorse(char: Character){
     switch char {
     case "A":
         //add letter
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         //add pause
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "B":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "C":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "D":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "E":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "F":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "G":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "H":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "I":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "J":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "K":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "L":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "M":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "N":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "O":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "P":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "Q":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "R":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "S":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "T":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "U":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "V":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "W":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "X":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "Y":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "Z":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "Å":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "Ä":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
     case "Ö":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
     case "0":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
 
     case "1":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
 
     case "2":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
 
     case "3":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
 
     case "4":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         break
 
     case "5":
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
 
     case "6":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
 
     case "7":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
 
     case "8":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
 
     case "9":
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addLong(charAsMorse)
+        addLong()
         date = date.dateByAddingTimeInterval(pause)
-        charAsMorse = addShort(charAsMorse)
+        addShort()
         break
 
     default:
@@ -373,20 +373,16 @@ func letterToMorse(char: Character){
     }
 }
 
-func addShort(var dict: [String:Float]) -> [String:Float] {
+func addShort() {
     let dateAsString = dateToString(date)
-    dict[dateAsString] = 0.3
+    charAsMorse[dateAsString] = 0.3
     date = date.dateByAddingTimeInterval(0.3)
-    
-    return dict
 }
 
-func addLong(var dict: [String:Float]) -> [String:Float] {
+func addLong(){
     let dateAsString = dateToString(date)
-    dict[dateAsString] = 0.7
-    date = date.dateByAddingTimeInterval(0.7)
-    
-    return dict
+    charAsMorse[dateAsString] = 0.6
+    date = date.dateByAddingTimeInterval(0.6)
 }
 
 func dateToString(date: NSDate) -> String {

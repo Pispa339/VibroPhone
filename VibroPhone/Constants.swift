@@ -13,4 +13,5 @@ struct Constants {
     static let userNameKey = "userNameKey"
     static let passwordKey = "passwordKey"
     static let uidKey = "uidKey"
+    static let receiversKey = "receiversKey"
 }

@@ -28,8 +28,6 @@ void AudioServicesPlaySystemSoundWithVibration(int, id, id);
     [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
     
     AudioServicesPlaySystemSoundWithVibration(4095,nil,dict);
-    
-
 }
 
 @end

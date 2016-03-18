@@ -23,6 +23,9 @@ class MessageTableViewController: UITableViewController {
         //let defaults = NSUserDefaults.standardUserDefaults()
         //defaults.removeObjectForKey(Constants.userNameKey)
         //defaults.removeObjectForKey(Constants.passwordKey)
+        let navbarColor:UIColor = UIColor(red: 199/255, green: 79/255, blue: 19/255, alpha: 1)
+        navigationController!.navigationBar.barTintColor = navbarColor
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,7 +67,7 @@ class MessageTableViewController: UITableViewController {
         }
         else {
             loggedIn = false
-            composeButton.enabled = false
+            //composeButton.enabled = false
             defaults.removeObjectForKey(Constants.userNameKey)
             defaults.removeObjectForKey(Constants.passwordKey)
             self.performSegueWithIdentifier("showLogin", sender: self)
@@ -123,9 +126,6 @@ class MessageTableViewController: UITableViewController {
     // MARK:  UITableViewDelegate Methods
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        //let row = indexPath.row
-        //showMessages
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -28,10 +28,7 @@ class MsgsFromUserViewController: UITableViewController {
     }
     
     func getMessages() {
-        print(ref)
-        print(senderUsername)
         ref = ref.childByAppendingPath(senderUsername)
-        print(ref)
         ref!.queryOrderedByKey().observeEventType(.Value, withBlock: { snapshot in
             print(snapshot.value)
             self.messages = snapshot.value as! [String:[String:Float]]
@@ -54,7 +51,6 @@ class MsgsFromUserViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
-        
         let row = indexPath.row
         cell.textLabel?.text = messageTitles[row]
         
@@ -66,7 +62,6 @@ class MsgsFromUserViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        print(messageTitles[row])
         playVibrationMessage(messageTitles[row])
     }
     
@@ -96,7 +91,6 @@ class MsgsFromUserViewController: UITableViewController {
             times[i] = times[i] - durations[i-1]
         }
         
-        
         vibrationPlayer.playVibration(times, durations)
     }
     
@@ -106,17 +100,4 @@ class MsgsFromUserViewController: UITableViewController {
         let date = dateFormatter.dateFromString(dateString)
         return date!
     }
-    
-    func JSONToDict(jsonString:String) -> Dictionary<String, Float> {
-        do {
-            let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
-            let decoded = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: []) as? [String:Float]
-            // here "decoded" is the dictionary decoded from JSON data
-            return decoded!
-        } catch let error as NSError {
-            print(error)
-        }
-        return ["": 0]
-    }
-
 }

@@ -9,18 +9,19 @@
 import UIKit
 import CoreMotion
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     let motionManager = CMMotionManager()
     var lPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
     var timestamps = [String: Float]()
     var startTime:NSDate = NSDate()
     var startTimeString:String = ""
+    var receiver:String!
     var ref = Firebase(url: "https://vibrophone.firebaseio.com/Users/")
     
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var touchPanel: UIView!
-    @IBOutlet weak var receiverTField: UITextField!
+    @IBOutlet weak var receiverLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,14 @@ class ViewController: UIViewController {
         initGestureRecognizers()
         
         messageTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        messageTextField.delegate = self
+        
+        receiverLabel.text = "To: " + receiver
         
     }
     
     func initGestureRecognizers() {
+        
         lPressGesture = UILongPressGestureRecognizer(target: self, action: "handleTouch:")
         lPressGesture.minimumPressDuration = 0
         touchPanel.addGestureRecognizer(lPressGesture)
@@ -47,9 +52,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     func handleTouch(recognizer: UILongPressGestureRecognizer!) {
         if(recognizer.state == UIGestureRecognizerState.Began) {
-            touchPanel.backgroundColor = UIColor.darkGrayColor()
+            let activeColor:UIColor = UIColor(red: 122/255, green: 55/255, blue: 18/255, alpha: 1)
+            touchPanel.backgroundColor = activeColor
             startTimeString = currDateToString()
         }
         if(recognizer.state == UIGestureRecognizerState.Ended) {
@@ -61,7 +68,8 @@ class ViewController: UIViewController {
             sendButton.enabled = true
             cancelButton.enabled = true
             print("touch saved")
-            touchPanel.backgroundColor = UIColor.lightGrayColor()
+            let passiveColor:UIColor = UIColor(red: 54/255, green: 54/255, blue: 54/255, alpha: 1)
+            touchPanel.backgroundColor = passiveColor
         }
         messageTextField.enabled = false
     }
@@ -101,37 +109,35 @@ class ViewController: UIViewController {
     }
     
     func currDateToString() -> String {
-            startTime = NSDate()
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = Constants.dateFormat
-            return dateFormatter.stringFromDate(startTime)
+        startTime = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = Constants.dateFormat
+        return dateFormatter.stringFromDate(startTime)
     }
     
     @IBAction func sendButtonPressed(sender: AnyObject) {
-        if(receiverTField.text != "") {
-            if(messageTextField.text == "") {
-                sendMorseCode(timestamps)
-            }
-            else {
-                let morseDict = stringToMorse(messageTextField.text!.uppercaseString)
-                sendMorseCode(morseDict)
-                messageTextField.text = ""
-            }
-            sendButton.enabled = false
-            cancelButton.enabled = false
-            messageTextField.enabled = true
-            lPressGesture.enabled = true
-            if let navController = self.navigationController {
-                navController.popViewControllerAnimated(true)
-            }
+        if(messageTextField.text == "") {
+            sendMorseCode(timestamps)
         }
+        else {
+            let morseDict = stringToMorse(messageTextField.text!.uppercaseString)
+            sendMorseCode(morseDict)
+            messageTextField.text = ""
+        }
+        sendButton.enabled = false
+        cancelButton.enabled = false
+        messageTextField.enabled = true
+        lPressGesture.enabled = true
+   
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
     }
     
     func sendMorseCode(dictToSend: [String:Float]) {
         let jsonString = dictToJSON(dictToSend)
         print(jsonString)
         let id = currDateToString()
-        let receiver = receiverTField.text?.stringByReplacingOccurrencesOfString(".", withString: "")
+        let receiver = self.receiver.stringByReplacingOccurrencesOfString(".", withString: "")
         let defaults = NSUserDefaults.standardUserDefaults()
         let sender = defaults.stringForKey(Constants.userNameKey)?.stringByReplacingOccurrencesOfString(".", withString: "")
         let msgPath = ref.childByAppendingPath(receiver).childByAppendingPath(sender).childByAppendingPath(id)
