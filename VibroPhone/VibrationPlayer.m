@@ -19,11 +19,13 @@ void AudioServicesPlaySystemSoundWithVibration(int, id, id);
     for (int i = 0; i < durations.count; i++){
         [arr addObject:[NSNumber numberWithBool:YES]];
         [arr addObject:[durations objectAtIndex:i]];
+        
         if(i < (times.count)) {
             [arr addObject:[NSNumber numberWithBool:NO]];
             [arr addObject:[times objectAtIndex:i]];
         }
     }
+    
     [dict setObject:arr forKey:@"VibePattern"];
     [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
     

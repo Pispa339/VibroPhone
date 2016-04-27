@@ -17,9 +17,11 @@ class ReceiverViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if defaults.arrayForKey(Constants.receiversKey) != nil {
             receivers = defaults.arrayForKey(Constants.receiversKey) as! [String]
         }
+        
         tableview.delegate = self
         tableview.dataSource = self
         newReceiverTField.delegate = self
@@ -69,6 +71,7 @@ class ReceiverViewController: UIViewController, UITableViewDelegate, UITableView
                     destination.receiver = receivers[userIndex]
                     //destination.ref = refForUser
                 }
+                    
                 else {
                     destination.receiver = newReceiverTField.text
                 }

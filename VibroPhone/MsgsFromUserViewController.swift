@@ -71,12 +71,15 @@ class MsgsFromUserViewController: UITableViewController {
         var messageDateDict = [NSDate:Float]()
         var times = [Int]()
         var durations = [Int]()
+        
         for key in keys {
             let date = dateFromString(key)
             messageDateDict[date] = messageDict![key]
         }
+        
         var dates = Array(messageDateDict.keys)
         dates.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedAscending })
+        
         for date in dates {
             let duration = (messageDateDict[date]! * 1000)
             durations.append(Int(duration))

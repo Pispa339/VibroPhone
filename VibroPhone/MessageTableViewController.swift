@@ -56,8 +56,7 @@ class MessageTableViewController: UITableViewController {
     
     func authenticateUser() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let usersUID = defaults.stringForKey(Constants.uidKey)
-        {
+        if let usersUID = defaults.stringForKey(Constants.uidKey) {
             uid = usersUID
             loggedIn = true
             composeButton.enabled = true
@@ -82,7 +81,8 @@ class MessageTableViewController: UITableViewController {
                 let alert = UIAlertController(title: "Error", message: "Could not login", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
-            } else {
+            }
+            else {
                 self.ref.observeAuthEventWithBlock({ authData in
                     if authData != nil {
                         // user authenticated
@@ -90,7 +90,8 @@ class MessageTableViewController: UITableViewController {
                         let usernamePathComponent = self.username.stringByReplacingOccurrencesOfString(".", withString: "")
                         self.refForUser = self.refForUser.childByAppendingPath(usernamePathComponent)
                         self.getReceived()
-                    } else {
+                    }
+                    else {
                         let alert = UIAlertController(title: "Error", message: "No user signed in", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)

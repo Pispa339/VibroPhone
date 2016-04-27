@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         UIApplication.sharedApplication().idleTimerDisabled = true
         initGestureRecognizers()
         
-        messageTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        messageTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         messageTextField.delegate = self
         
         receiverLabel.text = "To: " + receiver
@@ -37,11 +37,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initGestureRecognizers() {
         
-        lPressGesture = UILongPressGestureRecognizer(target: self, action: "handleTouch:")
+        lPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.handleTouch(_:)))
         lPressGesture.minimumPressDuration = 0
         touchPanel.addGestureRecognizer(lPressGesture)
         
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -56,18 +56,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleTouch(recognizer: UILongPressGestureRecognizer!) {
         if(recognizer.state == UIGestureRecognizerState.Began) {
             let activeColor:UIColor = UIColor(red: 122/255, green: 55/255, blue: 18/255, alpha: 1)
+            
             touchPanel.backgroundColor = activeColor
             startTimeString = currDateToString()
         }
-        if(recognizer.state == UIGestureRecognizerState.Ended) {
+        
+        else if(recognizer.state == UIGestureRecognizerState.Ended) {
+            
             let elapsedTime = NSDate().timeIntervalSinceDate(startTime)
             let elapsedTimeFl = Float(elapsedTime)
+            
             timestamps[startTimeString] = elapsedTimeFl
             startTime = NSDate()
             startTimeString = ""
             sendButton.enabled = true
             cancelButton.enabled = true
-            print("touch saved")
+            //print("touch saved")
             let passiveColor:UIColor = UIColor(red: 54/255, green: 54/255, blue: 54/255, alpha: 1)
             touchPanel.backgroundColor = passiveColor
         }
@@ -80,6 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             sendButton.enabled = false
             cancelButton.enabled = false
         }
+            
         else {
             lPressGesture.enabled = false
             sendButton.enabled = true
@@ -105,6 +110,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch let error as NSError {
             print(error)
         }
+        
         return ""
     }
     
@@ -119,11 +125,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if(messageTextField.text == "") {
             sendMorseCode(timestamps)
         }
+            
         else {
             let morseDict = stringToMorse(messageTextField.text!.uppercaseString)
             sendMorseCode(morseDict)
             messageTextField.text = ""
         }
+        
         sendButton.enabled = false
         cancelButton.enabled = false
         messageTextField.enabled = true

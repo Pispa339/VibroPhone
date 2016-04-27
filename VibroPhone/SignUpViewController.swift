@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
@@ -51,7 +51,8 @@ class SignUpViewController: UIViewController {
                         withValueCompletionBlock: { error, result in
                             if error != nil {
                                 // There was an error creating the account
-                            } else {
+                            }
+                            else {
                                 let uid = result["uid"] as? String
                                 print("Successfully created user account with uid: \(uid)")
                                 let defaults = NSUserDefaults.standardUserDefaults()

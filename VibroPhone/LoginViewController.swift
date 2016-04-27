@@ -58,7 +58,8 @@ class LoginViewController: UIViewController {
                 let alert = UIAlertController(title: "Error", message: "Could not login", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
-            } else {
+            }
+            else {
                 self.ref.observeAuthEventWithBlock({ authData in
                     if authData != nil {
                         let defaults = NSUserDefaults.standardUserDefaults()
@@ -67,7 +68,8 @@ class LoginViewController: UIViewController {
                         defaults.setObject(authData.uid, forKey: Constants.uidKey)
                         self.dismissViewControllerAnimated(true, completion: nil)
                         print(authData)
-                    } else {
+                    }
+                    else {
                         let alert = UIAlertController(title: "Error", message: "No user signed in", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
