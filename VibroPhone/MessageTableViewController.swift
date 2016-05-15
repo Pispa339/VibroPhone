@@ -44,8 +44,38 @@ class MessageTableViewController: UITableViewController {
             let userData = snapshot.value
             if let _ = userData as? [String:[String:[String:Float]]] {
                 let allData = userData as! [String:[String:[String:Float]]]
+                let defaults = NSUserDefaults.standardUserDefaults()
+                let oldData = defaults.dictionaryForKey("oldData")
                 self.received = Array(allData.keys)
-                
+                if(oldData != nil) {
+                    
+                    let oldDataDict:[String:[String:[String:Float]]] = oldData as! [String:[String:[String:Float]]]
+                    let oldReceived = Array(oldDataDict.keys)
+                    
+                    for receiver in self.received {
+                        let messages: [String:[String:Float]] = allData[receiver]!
+                        let messageTitles: [String] = Array(allData[receiver]!.keys)
+                        if !oldReceived.contains(receiver) {
+                            for message in messageTitles {
+                                playVibrationMessage(message, messages: messages)
+                            }
+                        }
+                        else {
+                            let oldMessages: [String] = Array(oldDataDict[receiver]!.keys)
+                            for message in messageTitles {
+                                if !oldMessages.contains(message) {
+                                    playVibrationMessage(message, messages: messages)
+                                }
+                            }
+
+                        }
+                    }
+ 
+                    defaults.setObject(allData, forKey: "oldData")
+                }
+                else {
+                    defaults.setObject(allData, forKey: "oldData")
+                }
                 self.received.sortInPlace({ $0.compare($1) == NSComparisonResult.OrderedDescending })
                 self.tableView.reloadData()
             }

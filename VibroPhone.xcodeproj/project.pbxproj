@@ -24,6 +24,8 @@
 		C17AB2BD1C91B4BF00EF25CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */; };
 		C17AB2C81C91B4BF00EF25CA /* VibroPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2C71C91B4BF00EF25CA /* VibroPhoneTests.swift */; };
 		C17AB2D31C91B4C000EF25CA /* VibroPhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB2D21C91B4C000EF25CA /* VibroPhoneUITests.swift */; };
+		C18CA67E1CD9DF510090F6F6 /* Helsinki.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C18CA67D1CD9DF510090F6F6 /* Helsinki.gpx */; };
+		C1EB88C61CE8992D00D3DBF6 /* VibrationPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EB88C51CE8992D00D3DBF6 /* VibrationPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		C17AB2D21C91B4C000EF25CA /* VibroPhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibroPhoneUITests.swift; sourceTree = "<group>"; };
 		C17AB2D41C91B4C000EF25CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C17AB3031C91C24100EF25CA /* VibroPhone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VibroPhone-Bridging-Header.h"; sourceTree = "<group>"; };
+		C18CA67D1CD9DF510090F6F6 /* Helsinki.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Helsinki.gpx; path = ../../../Downloads/Helsinki.gpx; sourceTree = "<group>"; };
+		C1EB88C51CE8992D00D3DBF6 /* VibrationPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrationPlayer.swift; sourceTree = "<group>"; };
 		F53D053F4895B933875F9D1F /* libPods-VibroPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VibroPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,12 +154,14 @@
 				C1257B871C9C2A8B00225049 /* ReceiverViewController.swift */,
 				C10519AF1C98622400C33511 /* SignUpViewController.swift */,
 				C10519AD1C98461500C33511 /* MessageTableViewController.swift */,
+				C1EB88C51CE8992D00D3DBF6 /* VibrationPlayer.swift */,
 				C10519A91C9836DF00C33511 /* LoginViewController.swift */,
 				C17AB2B91C91B4BF00EF25CA /* Assets.xcassets */,
 				C17AB2BB1C91B4BF00EF25CA /* LaunchScreen.storyboard */,
 				C17AB2BE1C91B4BF00EF25CA /* Info.plist */,
 				C17AB3031C91C24100EF25CA /* VibroPhone-Bridging-Header.h */,
 				C10519AB1C98438A00C33511 /* MsgsFromUserViewController.swift */,
+				C18CA67D1CD9DF510090F6F6 /* Helsinki.gpx */,
 				C10519A21C94725800C33511 /* VibrationPlayer.h */,
 				C10519A31C94725800C33511 /* VibrationPlayer.m */,
 				C10519A71C95809500C33511 /* MorseCoder.swift */,
@@ -288,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18CA67E1CD9DF510090F6F6 /* Helsinki.gpx in Resources */,
 				C17AB2BD1C91B4BF00EF25CA /* LaunchScreen.storyboard in Resources */,
 				C17AB2BA1C91B4BF00EF25CA /* Assets.xcassets in Resources */,
 				C17AB2B81C91B4BF00EF25CA /* Main.storyboard in Resources */,
@@ -369,6 +376,7 @@
 				C10519A81C95809500C33511 /* MorseCoder.swift in Sources */,
 				C17AB2B31C91B4BF00EF25CA /* AppDelegate.swift in Sources */,
 				C10519AC1C98438B00C33511 /* MsgsFromUserViewController.swift in Sources */,
+				C1EB88C61CE8992D00D3DBF6 /* VibrationPlayer.swift in Sources */,
 				C10519B01C98622400C33511 /* SignUpViewController.swift in Sources */,
 				C10519AE1C98461500C33511 /* MessageTableViewController.swift in Sources */,
 				C10519A41C94725800C33511 /* VibrationPlayer.m in Sources */,
